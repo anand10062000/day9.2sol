@@ -2,7 +2,6 @@ package addbook;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
 public class AddressBook {
 	ArrayList<PersonInfo> persons;
 	Scanner sc = new Scanner(System.in);
@@ -67,19 +66,19 @@ public class AddressBook {
 				System.out.println("enter new address to upadate");
 
 				String city = sc.next();
-				
+
 				p.setCity(city);
-				
+
 				System.out.println("enter new state to update");
 
 				String state = sc.next();
 				p.setState(state);
-				
+
 				System.out.println("enter zip code to update");
 
 				int zip = sc.nextInt();
 				p.setZip(zip);
-				
+
 
 				System.out.println("enter new phone num to update");
 
@@ -87,6 +86,27 @@ public class AddressBook {
 				p.setPhoneNum(p.phoneNum);
 
 			}
+		}
+
+	}
+	public void remove(String name){
+		for(int i = 0; i < persons.size(); i++){
+			PersonInfo p = (PersonInfo)persons.get(i); 
+
+			if(name.equals(p.firstname)){
+
+				persons.remove(i);
+
+			}
+		}
+	}
+	public void display() {
+		AddressBook p;
+		for (int i = 0; i < persons.size(); i++) {
+			System.out.println(persons.get(i));
+
+
+
 		}
 
 	}
